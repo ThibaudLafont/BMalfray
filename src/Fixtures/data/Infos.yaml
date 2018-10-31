@@ -1,15 +1,7 @@
 # Owner personnal infos
-mail_address: bertrand.malfray@gmail.com
-phone_number: 06.69.37.26.04
+name: Informations de l'index
+phone_number: "0669372604"
 biography: Etudiant en 4eme année en game et level design à Objectif3D Montpellier. J’ai étudié des méthodes rationnelles
   de design et aime travailler en équipe. \n
   J’aspire à travailler internationalement dans une grande entreprise. Actuellement en recherche de stage de fin d’étude
-  ou d’un emploi pour 2018. N’hésitez pas à me contacter pour tout retour.
-cv_img: # Image affichée à côté de la biographie, à placer dans medias/infos
-    name: # Nom de l'image, doit correspondre au nom du fichier sans extension
-    alt : # Description courte et pertinente de l'image
-    extension: # Extension du fichier (ici plutôt jpg ou jpeg)
-
-# Owner work infos
-work_place : Objectif3D
-work_address: Boulevard de la Lironde, 34980 Montferrier
+city: Montpellier

@@ -1,0 +1,33 @@
+sonata_admin:
+    title: Administration
+    search: false
+    dashboard:
+        groups:
+            Contenu:
+                items:
+                    - admin.index.info
+                    - admin.category
+                    - admin.project
+            Médiathèque:
+                icon: '<i class="fa fa-image"></i>'
+                items:
+                    - custom.media.admin.media
+
+    assets:
+        extra_javascripts:
+            - bundles/fosckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
+        extra_stylesheets:
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

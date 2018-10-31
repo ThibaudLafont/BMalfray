@@ -1,0 +1,27 @@
+# FOS CKEditor Bundle
+fos_ck_editor:
+    default_config: default
+    configs:
+        default:
+            # default toolbar plus Format button
+            toolbar:
+            - [Format, Bold, Italic, Underline, -, Undo, Redo, -,
+              NumberedList, BulletedList, -,
+              Blockquote, -, Image, Link, Unlink]
+            - [Maximize]
+            filebrowserBrowseRoute: admin_sonata_media_media_ckeditor_browser
+            filebrowserImageBrowseRoute: admin_sonata_media_media_ckeditor_browser
+            filebrowserImageBrowseRouteParameters:
+                provider: sonata.media.provider.custom.image
+            filebrowserUploadMethod: form
+            filebrowserUploadRoute: admin_sonata_media_media_ckeditor_upload
+            filebrowserUploadRouteParameters:
+                provider: sonata.media.provider.custom.file
+            filebrowserImageUploadRoute: admin_sonata_media_media_ckeditor_upload
+            filebrowserImageUploadRouteParameters:
+                provider: sonata.media.provider.custom.image
+        bio:
+            toolbar:
+            - [Format, Bold, Italic, Underline, -,
+              NumberedList, BulletedList, -, Link, Unlink]
+            - [Undo, Redo, -, Maximize,]

@@ -2,6 +2,7 @@
 namespace App\Entity\Project\Lists;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class AbstractList
@@ -24,6 +25,12 @@ abstract class AbstractList
      * @var string
      *
      * @ORM\Column(name="content", type="string")
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner le contenu")
+     * @Assert\Type(
+     *     type="string",
+     *     message="La compétence doit être une chaine de caractères"
+     * )
      */
     private $content;
 
@@ -45,7 +52,7 @@ abstract class AbstractList
     /**
      * @return string
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->content;
     }
@@ -61,7 +68,7 @@ abstract class AbstractList
     /**
      * @return int
      */
-    public function getPosition(): int
+    public function getPosition()
     {
         return $this->position;
     }

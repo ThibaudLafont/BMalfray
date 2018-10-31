@@ -1,0 +1,55 @@
+sonata_media:
+    db_driver: doctrine_orm
+    default_context: default
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.custom.dailymotion
+                - sonata.media.provider.custom.youtube
+                - sonata.media.provider.custom.image
+                - sonata.media.provider.pdf
+                - sonata.media.provider.custom.vimeo
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+        visual:
+            providers:
+                - sonata.media.provider.custom.image
+                - sonata.media.provider.custom.vimeo
+                - sonata.media.provider.custom.dailymotion
+                - sonata.media.provider.custom.youtube
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
+
+        image:
+            providers:
+                - sonata.media.provider.custom.image
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
+
+        pdf:
+            providers:
+                - sonata.media.provider.pdf
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+                square: { height: 150, quality: 70}
+
+    cdn:
+        server:
+            path: /uploads/media
+
+    filesystem:
+        local:
+            # Directory for uploads should be writable
+            directory: "%kernel.project_dir%/public/uploads/media"
+            create: false
+    class:
+        media: App\Application\Sonata\MediaBundle\Entity\Media
+        gallery: App\Application\Sonata\MediaBundle\Entity\Gallery
+        gallery_has_media: App\Application\Sonata\MediaBundle\Entity\GalleryHasMedia
