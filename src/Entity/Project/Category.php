@@ -114,7 +114,7 @@ class Category{
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -134,7 +134,7 @@ class Category{
      *
      * @param string $summary
      */
-    public function setSummary(string $summary)
+    public function setSummary($summary)
     {
         $this->summary = $summary;
     }

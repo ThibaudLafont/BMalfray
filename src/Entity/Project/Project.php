@@ -384,7 +384,7 @@ class Project{
     public function getContributorsNbreDisplay()
     {
         $count = $this->contributorsNbre;
-        
+
         if($count === 0){
             $return = 'Aucun contributeur';
 
@@ -492,7 +492,7 @@ class Project{
     /**
      * @param string $highConceptType
      */
-    public function setHighConceptType(string $highConceptType): void
+    public function setHighConceptType($highConceptType): void
     {
         $this->highConceptType = $highConceptType;
     }
@@ -508,7 +508,7 @@ class Project{
     /**
      * @param string $highConceptGender
      */
-    public function setHighConceptGender(string $highConceptGender): void
+    public function setHighConceptGender($highConceptGender): void
     {
         $this->highConceptGender = $highConceptGender;
     }
@@ -524,7 +524,7 @@ class Project{
     /**
      * @param string $highConceptTarget
      */
-    public function setHighConceptTarget(string $highConceptTarget): void
+    public function setHighConceptTarget($highConceptTarget): void
     {
         $this->highConceptTarget = $highConceptTarget;
     }

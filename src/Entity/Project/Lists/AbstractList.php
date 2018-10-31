@@ -60,7 +60,7 @@ abstract class AbstractList
     /**
      * @param string $content
      */
-    public function setContent(string $content)
+    public function setContent($content)
     {
         $this->content = $content;
     }

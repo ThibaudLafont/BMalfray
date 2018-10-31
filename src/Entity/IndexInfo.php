@@ -209,7 +209,7 @@ class IndexInfo
     /**
      * @param string $city
      */
-    public function setCity(string $city): void
+    public function setCity($city): void
     {
         $this->city = $city;
     }
@@ -273,7 +273,7 @@ class IndexInfo
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
