@@ -381,6 +381,22 @@ class Project{
         return $this->contributorsNbre;
     }
 
+    public function getContributorsNbreDisplay()
+    {
+        $count = $this->contributorsNbre;
+        
+        if($count === 0){
+            $return = 'Aucun contributeur';
+
+        }else {
+            $return = $count . ' contributeur';
+            if($count !== 1)
+                $return .= 's';
+        }
+
+        return $return;
+    }
+
     /**
      * @param int $contributorsNbre
      */

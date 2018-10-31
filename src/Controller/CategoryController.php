@@ -30,7 +30,6 @@ class CategoryController extends Controller
             );
 
         if(is_null($cat)) {
-//            throw new NotFoundHttpException("Aucune resource ici");
             return $this->redirectToRoute('no_project');
         }
 
@@ -38,7 +37,10 @@ class CategoryController extends Controller
 
         return $this->render(
             'project/category.html.twig',
-            ['projects' => $projects]
+            [
+                'cat'      => $cat,
+                'projects' => $projects
+            ]
         );
 
     }
