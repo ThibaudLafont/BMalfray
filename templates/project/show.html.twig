@@ -34,9 +34,9 @@
                 <ul id="project-infos">
                     <li>
                         <img src="/img/picto/info.png" alt="Interrogation point pictogram">
-                        {{ project.highConcept.type }} -
-                        {{ project.highConcept.gender }} -
-                        {{ project.highConcept.target }}
+                        {{ project.highConceptType }} -
+                        {{ project.highConceptGender }} -
+                        {{ project.highConceptTarget }}
                     </li>
                     <li>
                         <img src="/img/picto/calendar.png" alt="Calendar pictogram">
@@ -48,7 +48,7 @@
                     </li>
                     <li>
                         <img src="/img/picto/user.png" alt="User pictogram">
-                        {{ project.contributorsNbre }}
+                        {{ project.contributorsNbreDisplay }}
                     </li>
                 </ul>
             </div>
@@ -70,19 +70,20 @@
         </section>
 
         <section id="project-content" class="project-row">
-            {% for part in project.explanation.content %}
-                {% if part.type is same as('title') %}
-                    <h{{ part.attr.level }}>
-                        {{ part.attr.content }}
-                    </h{{ part.attr.level }}>
-                {% elseif part.type is same as('paragraph') %}
-                    <p>{{ part.attr.content|raw }}</p>
-                {% elseif part.type is same as('local') %}
-                    <a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">
-                        <img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">
-                    </a>
-                {% endif %}
-            {% endfor %}
+            {{ project.content|raw }}
+            {#{% for part in project.explanation.content %}#}
+                {#{% if part.type is same as('title') %}#}
+                    {#<h{{ part.attr.level }}>#}
+                        {#{{ part.attr.content }}#}
+                    {#</h{{ part.attr.level }}>#}
+                {#{% elseif part.type is same as('paragraph') %}#}
+                    {#<p>{{ part.attr.content|raw }}</p>#}
+                {#{% elseif part.type is same as('local') %}#}
+                    {#<a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">#}
+                        {#<img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">#}
+                    {#</a>#}
+                {#{% endif %}#}
+            {#{% endfor %}#}
         </section>
     </article>
 {% endblock %}
