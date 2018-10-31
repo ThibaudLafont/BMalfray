@@ -20,3 +20,24 @@ $('[data-fancybox="images"]').fancybox({
         'close',
     ]
 });
+
+// Dailymotion support
+$.fancybox.defaults.media.dailymotion = {
+    matcher : /dailymotion.com\/embed\/video\/(.*)\/?(.*)/,
+    params : {
+        additionalInfos : 0,
+        autoStart : 1
+    },
+    type : 'iframe',
+    url  : '//www.dailymotion.com/embed/video/$1'
+};
+
+// Article image fancybox
+$('#project-content img').css('cursor', 'pointer')
+$('#project-content img').on('click', function() {
+    var image = this;
+    $.fancybox.open( {
+        src: this.src
+    });
+});
+

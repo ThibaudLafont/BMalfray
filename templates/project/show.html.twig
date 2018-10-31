@@ -56,34 +56,23 @@
 
         <section id="project-gallery" class="project-row">
             <div class="slick-container">
-                {% for local in project.localMedias %}
-                    <a href="{{ local.src }}" title="{{ local.alt }}" data-fancybox="gallery">
-                        <img src="{{ local.src }}" alt="{{ local.alt }}">
-                    </a>
-                {% endfor %}
-                {% for distant in project.distantMedias %}
-                    <a class="various fancybox" data-fancybox-type="iframe" href="{{ distant.src }}" title="{{ distant.description }}" data-fancybox="gallery">
-                        <img src="{{ distant.imgSrc }}" alt="{{ distant.description }}">
-                    </a>
+                {% for phMedia in project.projectHasMedias %}
+                    {% if phMedia.media is not null %}
+                    {# Define media url to link #}
+                    {% if phMedia.isVideoMedia %}
+                        <a data-fancybox="gallery" href="{{ phMedia.urlIfVideoMedia }}">
+                    {% else %}
+                        <a data-fancybox="gallery" href="{% path phMedia.media, 'reference' %}">
+                    {% endif %}
+                        <img class="ui image gallery-img" src="{% path phMedia.media, 'big' %}" alt="">
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </section>
 
         <section id="project-content" class="project-row">
             {{ project.content|raw }}
-            {#{% for part in project.explanation.content %}#}
-                {#{% if part.type is same as('title') %}#}
-                    {#<h{{ part.attr.level }}>#}
-                        {#{{ part.attr.content }}#}
-                    {#</h{{ part.attr.level }}>#}
-                {#{% elseif part.type is same as('paragraph') %}#}
-                    {#<p>{{ part.attr.content|raw }}</p>#}
-                {#{% elseif part.type is same as('local') %}#}
-                    {#<a href="{{ part.attr.src }}" title="{{ part.attr.alt }}" data-fancybox="content-medias">#}
-                        {#<img src="{{ part.attr.src }}" alt="{{ part.attr.src }}" class="{{ part.attr.display }}">#}
-                    {#</a>#}
-                {#{% endif %}#}
-            {#{% endfor %}#}
         </section>
     </article>
 {% endblock %}

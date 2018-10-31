@@ -497,6 +497,7 @@ h1#project-name {
 article#project {
     background-image: url('/img/blue-background.png');
 }
+
 .project-title {
     padding: 1.5rem;
 }
@@ -611,6 +612,21 @@ img.float-left{
     float: left;
     margin-right: 1rem;
     margin-bottom: 1rem;
+}
+#project-content img[style*="float:left"] {
+    margin: 1rem 1rem 1rem 0;
+}
+
+#project-content img[style*="float:right"] {
+    margin: 1rem 0 1rem 1rem;
+}
+
+#project-content img[style*="float: left"] {
+    margin: 1rem 1rem 1rem 0;
+}
+
+#project-content img[style*="float: right"] {
+    margin: 1rem 0 1rem 1rem;
 }
 
 @media all and (min-width: 1200px) {
