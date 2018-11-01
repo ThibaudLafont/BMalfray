@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\IndexInfo;
 use App\Entity\Project\Project;
 use App\Form\Type\ContactType;
 use App\Service\MailSender;
@@ -18,6 +19,12 @@ class DefaultController extends Controller
      * )
      */
     public function homeAction(Request $request, MailSender $mailer) {
+
+        // Get IndexInfo
+        $infos = $this->getDoctrine()->getRepository(IndexInfo::class)
+            ->findBy([
+                'name' => 'Informations de l\'index'
+            ])[0];
 
         $form = $this->createForm('App\Form\Type\ContactType');
 
@@ -38,7 +45,10 @@ class DefaultController extends Controller
 
         return $this->render(
             'default/homepage.html.twig',
-            ['form' => $form->createView()]
+            [
+                'infos' => $infos,
+                'form' => $form->createView()
+            ]
         );
 
     }

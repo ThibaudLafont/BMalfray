@@ -187,7 +187,9 @@ class IndexInfo
      */
     public function getPhoneNumber()
     {
-        return $this->phoneNumber;
+        $pieces = str_split($this->phoneNumber, 2);
+        $phone = implode(' ', $pieces);
+        return $phone;
     }
 
     /**
@@ -275,7 +277,7 @@ class IndexInfo
      */
     public function setName($name): void
     {
-        $this->name = $name;
+        $this->name = 'Informations de l\'index';
     }
 
 }

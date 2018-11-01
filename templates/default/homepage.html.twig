@@ -14,31 +14,33 @@
                 <!-- Biography -->
                 <h2>\ Bio</h2>
                 <!-- Bertrand picture -->
-                <img id="homepage-fronpic"
+                {% if infos.bioImage.media is null %}
+                    <img id="homepage-fronpic"
                      src="/img/infos/bertrand-malfray.jpg"
                      alt="Photo de Bertrand Malfray">
-                <p>Jeune diplômé en Game et Level Design de l'école Objectif 3D à Montpellier, France, j'ai étudié les méthodes rationnelles de design et participé à la création de plusieurs jeux.
-                Ayant également effectué un an de Licence Maths&Informatique, je connais les bases de l'algorithmique et de la programmation java, C++ et html.</p>
-                <p>Grand amateur de jeux, j'ai une préférence pour les RPG comme les Elder Scrolls ou, récemment,  Kingdome Come : Delivrance. J'apprécie mais aussi des jeux de tir TPS comme Warframe ou les Far Cry, ainsi que des jeux de furtivité comme les Assassin’s Creed, Invisible Inc.
-                Je connais également beaucoup le monde des MMORPG avec Dofus/Wakfu, Guild Wars 2, Black Desert Online. <br/>
-                Dans tous ces jeux, je prends le temps d'analyser les règles de game design : gameplay, camera, HUD, Menus, Signes et feedbacks.</p>
-                <p>Ayant un certain sens artistique, je suis à même de faire du level design pour tester mes features afin que la situation colle au plus près à l’intention du jeu.</p>
-                <p>Musicien sur mon temps libre, la pratique de la batterie m’a permis d’acquérir un bon sens du rythme, utile pour certains aspects de design.</p>
-                <p>Je suis actuellement à la recherche d’un premier emploi ou d’un stage de fin d’études.</p>
-                <p>N'hésitez pas à me contacter !</p>
+                {% else %}
+                    <img id="homepage-fronpic"
+                         src="{% path infos.bioImage.media, 'reference' %}"
+                         alt="Photo de Bertrand Malfray">
+                {% endif %}
+                {{ infos.content|raw }}
                 <div id="cv-links">
+                    {% if infos.ldCv.media is not null %}
                     <p>
-                        <a target="_blank" href="/assets/CV_BertrandMalfrayGD.pdf">
+                        <a target="_blank" href="{% path infos.gdCv.media, 'reference' %}">
                             <img src="/img/picto/pdf.png" alt="Document pictogram"><br/>
                             CV Game <br class="mobile-only"/> Design
                         </a>
                     </p>
+                    {% endif %}
+                    {% if infos.gdCv.media is not null %}
                     <p>
-                        <a target="_blank" href="/assets/CV_BertrandMalfrayLD.pdf">
+                        <a target="_blank" href="{% path infos.ldCv.media, 'reference' %}">
                             <img src="/img/picto/pdf.png" alt="Document pictogram"><br/>
                             CV Level <br class="mobile-only"/> Design
                         </a>
                     </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -52,11 +54,11 @@
                 <ul>
                     <li>
                         <img src="/img/picto/location.png" alt="School hat pictogram">
-                        Montpellier
+                        {{ infos.city }}
                     </li>
                     <li>
                         <img src="/img/picto/phone.png" alt="Phone pictogram">
-                        06 69 37 26 04
+                        {{ infos.phoneNumber }}
                     </li>
                 </ul>
             </div>
