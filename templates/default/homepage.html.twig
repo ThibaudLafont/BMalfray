@@ -23,7 +23,10 @@
                          src="{% path infos.bioImage.media, 'reference' %}"
                          alt="Photo de Bertrand Malfray">
                 {% endif %}
+
+                <!-- Biography -->
                 {{ infos.content|raw }}
+                <!-- CV links -->
                 <div id="cv-links">
                     {% if infos.ldCv.media is not null %}
                     <p>

@@ -78,6 +78,9 @@ hr {
 .mobile-only{
     display:none;
 }
+.text-align-right {
+    text-align: right;
+}
 
 .error-button {
     display: block;
