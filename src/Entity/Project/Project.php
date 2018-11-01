@@ -355,7 +355,7 @@ class Project{
 
     public function getShowUrl()
     {
-        return '/project/' . $this->getSlugName();
+        return '/project/' . $this->getId() . '/' . $this->getSlugName();
     }
     /**
      * @return string

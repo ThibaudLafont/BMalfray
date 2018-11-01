@@ -29,20 +29,24 @@ class ProjectController extends Controller
     }
 
     /**
+     * @param $id
      * @param $slugName
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @Route(
-     *     "/project/{slugName}",
+     *     "/project/{id}/{slugName}",
      *     name="project_show",
      *     requirements={"slugName"="(.+|-)+"}
      * )
      */
-    public function showAction($slugName) {
+    public function showAction($id, $slugName) {
 
         $em = $this->getDoctrine()->getManager();
         $project = $em->getRepository('App:Project\Project')
-            ->findOneBy(['slugName' => $slugName]);
+            ->findOneBy([
+                'id' => $id,
+                'slugName' => $slugName
+            ]);
 
         if(is_null($project)) {
             throw new NotFoundHttpException('Aucune ressource ici...');

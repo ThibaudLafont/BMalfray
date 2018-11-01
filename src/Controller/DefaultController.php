@@ -22,9 +22,9 @@ class DefaultController extends Controller
 
         // Get IndexInfo
         $infos = $this->getDoctrine()->getRepository(IndexInfo::class)
-            ->findBy([
+            ->findOneBy([
                 'name' => 'Informations de l\'index'
-            ])[0];
+            ]);
 
         $form = $this->createForm('App\Form\Type\ContactType');
 
