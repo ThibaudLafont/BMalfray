@@ -146,6 +146,7 @@ section#homepage-content,
     list-style-type: none;
     padding: 0;
 }
+
 .homepage-column li,
 .list-column li,
 .category-detail-column li,
@@ -426,11 +427,19 @@ section#category-detail {
 .category-detail-column p{
     margin : 1.5rem 0 0 0;
 }
-.category-detail-column ul {
+.category-detail-column ul{
     margin : 1rem 0 0 0;
 }
 #skills-ul {
     margin: 0;
+    padding-left: inherit;
+}
+#skills-ul li {
+    display: list-item;
+    list-style-image: url('/resource/list-type.jpg');
+}
+.project-column #skills-ul li {
+    margin-left: 25px;
 }
 .category-detail-column h4 {
     margin-top: 2rem;

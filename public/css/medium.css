@@ -123,11 +123,11 @@ h1#project-name {
 #skills-ul {
     padding: 0 1.5rem;
 }
-.category-detail-column #skills-ul {
-     padding: 0;
- }
 #skills-ul li{
     padding: 0.5rem 0;
+}
+.project-column #skills-ul li {
+    margin-left: 20px;
 }
 #project-content img {
     width: 100% !important;
