@@ -280,4 +280,31 @@ class IndexInfo
         $this->name = 'Informations de l\'index';
     }
 
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez renseigner une photo de bio")
+     */
+    public function hasABioImage()
+    {
+        return $this->getBioImage()->getMedia() !== null;
+    }
+
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez renseigner un CV Level Design")
+     */
+    public function hasALDCv()
+    {
+        return $this->getLdCv()->getMedia() !== null;
+    }
+
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez renseigner un CV Game Design")
+     */
+    public function hasAGDCv()
+    {
+        return $this->getGdCv()->getMedia() !== null;
+    }
+
 }

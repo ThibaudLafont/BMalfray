@@ -586,4 +586,36 @@ class Project{
         return $return;
     }
 
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez renseigner une image de couverture")
+     */
+    public function hasACoverImage()
+    {
+        return $this->getCoverImage()->getMedia() !== null;
+    }
+
+    /**
+     * @return bool
+     * @Assert\IsTrue(message="Veuillez ajouter au moins un média pour la gallerie")
+     */
+    public function hasAtLeastOneGalleryHasMedia()
+    {
+        // If has more than one media
+        if($this->getProjectHasMedias()->count() > 1) {
+            foreach($this->getProjectHasMedias() as $phMedia) {
+                if($phMedia->getMedia() !== null) {
+                    return true;
+                }
+            }
+            return false;
+            // If one item, check if media was inquired
+        } elseif($this->getProjectHasMedias()->count() === 1) {
+            return $this->getProjectHasMedias()->get(0)->getMedia() !== null;
+            // Else no media, return false
+        } else {
+            return false;
+        }
+    }
+
 }
