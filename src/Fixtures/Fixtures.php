@@ -11,6 +11,7 @@ use App\Entity\Project\HighConcept;
 use App\Entity\Project\Lists\CategoryList;
 use App\Entity\Project\Lists\ProjectList;
 use App\Entity\Project\Project;
+use App\Entity\User;
 use App\Service\Sluggifier;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -62,8 +63,24 @@ class Fixtures extends Fixture
        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/GameDesign.yaml'));
        $this->loadCategoryProjects($datas);
 
+        // Load and parse GD YAML file
+        $datas =  Yaml::parse(file_get_contents(__DIR__ . '/data/User.yaml'));
+        $this->loadUsers($datas);
+
         // Flush results
         $manager->flush();
+    }
+
+    public function loadUsers(array $datas)
+    {
+        foreach ($datas as $data) {
+            $user = new User();
+            $user->setUsername($data['username']);
+            $user->setPassword($data['mdp']);
+            $user->setRoles(['ROLE_USER']);
+
+            $this->getManager()->persist($user);
+        }
     }
 
     public function loadIndexInfos(array $datas)

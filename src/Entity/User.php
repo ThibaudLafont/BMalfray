@@ -1,126 +1,108 @@
 <?php
+
 namespace App\Entity;
 
-use App\Traits\Entity\Hydrate;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Class User
- *
- * @ORM\Entity
- * @ORM\Table(name="auth_user")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User{
-
+class User implements UserInterface
+{
     /**
-     * @var integer
-     *
-     * @ORM\Id
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(
-     *     name="username",
-     *     type="string",
-     *     length=15
-     * )
+     * @ORM\Column(type="string", length=180, unique=true)
      */
     private $username;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(
-     *     name="password",
-     *     type="string",
-     *     length=255
-     * )
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
 
-    /**
-     * @var string
-     *
-     * Used for login form submission
-     */
-    private $plainPassword;
-
-    // Traits
-    use Hydrate;
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
-     * Get username
+     * A visual identifier that represents this user.
      *
-     * @return string
+     * @see UserInterface
      */
     public function getUsername(): string
     {
-        return $this->username;
+        return (string) $this->username;
     }
 
-    /**
-     * Set username
-     *
-     * @param string $username
-     */
-    public function setUsername(string $username)
+    public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
     }
 
     /**
-     * Get password
-     *
-     * @return string
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
      */
     public function getPassword(): string
     {
-        return $this->password;
+        return (string) $this->password;
     }
 
-    /**
-     * Set password
-     *
-     * @param string $password
-     */
-    public function setPassword(string $password)
+    public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
     }
 
     /**
-     * Get plainPassword
-     *
-     * @return string
+     * @see UserInterface
      */
-    public function getPlainPassword(): string
+    public function getSalt()
     {
-        return $this->plainPassword;
+        // not needed when using the "bcrypt" algorithm in security.yaml
     }
 
     /**
-     * Set plainPassword
-     *
-     * @param string $plainPassword
+     * @see UserInterface
      */
-    public function setPlainPassword(string $plainPassword)
+    public function eraseCredentials()
     {
-        $this->plainPassword = $plainPassword;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
-
 }
