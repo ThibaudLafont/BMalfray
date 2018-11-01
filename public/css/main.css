@@ -577,6 +577,12 @@ h1#project-name {
 }
 #project-gallery img,
 #project-gallery iframe{
+    margin: auto;
+    height: 14.06vw;
+}
+.gallery-item-link,
+.gallery-item-link{
+    background-color: #000000;
     width: 25vw;
     height: 14.06vw;
 }
@@ -630,7 +636,14 @@ img.float-left{
 }
 
 @media all and (min-width: 1200px) {
-    #project-gallery img, #project-gallery iframe {
+    #project-gallery img,
+    #project-gallery iframe{
+        margin: auto;
+        height: 11.72vw;
+    }
+    .gallery-item-link,
+    .gallery-item-link{
+        background-color: #000000;
         width: 20.83vw;
         height: 11.72vw;
     }

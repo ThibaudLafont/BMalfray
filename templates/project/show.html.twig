@@ -60,9 +60,9 @@
                     {% if phMedia.media is not null %}
                     {# Define media url to link #}
                     {% if phMedia.isVideoMedia %}
-                        <a data-fancybox="gallery" href="{{ phMedia.urlIfVideoMedia }}">
+                        <a class="gallery-item-link" data-fancybox="gallery" href="{{ phMedia.urlIfVideoMedia }}">
                     {% else %}
-                        <a data-fancybox="gallery" href="{% path phMedia.media, 'reference' %}">
+                        <a class="gallery-item-link" data-fancybox="gallery" href="{% path phMedia.media, 'reference' %}">
                     {% endif %}
                         <img class="ui image gallery-img" src="{% path phMedia.media, 'big' %}" alt="">
                         </a>

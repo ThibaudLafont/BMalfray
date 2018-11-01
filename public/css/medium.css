@@ -129,8 +129,7 @@ h1#project-name {
 #skills-ul li{
     padding: 0.5rem 0;
 }
-/*@media all and (max-width: 600px) {*/
-    /*#main_content {*/
-        /*padding: 0;*/
-    /*}*/
-/*}*/
+#project-content img {
+    width: 100% !important;
+    height: auto !important;
+}
