@@ -45,7 +45,7 @@ class ProjectController extends Controller
             ->findOneBy(['slugName' => $slugName]);
 
         if(is_null($project)) {
-            throw new NotFoundHttpException('Aucun projet ici...');
+            throw new NotFoundHttpException('Aucune ressource ici...');
         }
 
         return $this->render(

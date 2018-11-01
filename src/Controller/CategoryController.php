@@ -24,16 +24,21 @@ class CategoryController extends Controller
     public function listProjectsAction($cat) {
 
         $em = $this->getDoctrine()->getManager();
+        // Get Category
         $cat = $em->getRepository(Category::class)
             ->findOneBy(
                 ['slugName' => $cat]
             );
+        // Store projects
+        $projects = $cat->getProjects();
 
-        if(is_null($cat)) {
+        // If no category related to slug name
+        if(is_null($cat)){
+            throw new NotFoundHttpException('Aucune ressource ici...');
+        // If no project posted
+        }elseif(count($projects) === 0) {
             return $this->redirectToRoute('no_project');
         }
-
-        $projects = $cat->getProjects();
 
         return $this->render(
             'project/category.html.twig',
