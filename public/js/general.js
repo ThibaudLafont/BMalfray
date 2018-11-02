@@ -24,15 +24,17 @@ function setUlMenuWidth($span, $ul)
 function hoverMenu($a, $ul)
 {
     $($a).hover(function(){
-        $($ul).show()
+        $($ul).fadeIn()
     }, function(){
-        if($($ul).is(':hover')){
-            $($ul).hover(function () {}, function(){
-                $(this).hide()
-            })
-        } else {
-            $($ul).hide()
-        }
+        setTimeout(function(){
+            if($($ul).is(':hover')){
+                $($ul).hover(function () {}, function(){
+                    $(this).fadeOut()
+                })
+            } else {
+                $($ul).fadeOut()
+            }
+        }, 500)
     })
 }
 // Inquire menu

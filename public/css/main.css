@@ -234,6 +234,7 @@ section#homepage-content,
     padding: 0;
     text-align: center;
     margin: 0;
+    z-index: 201;
 }
 ul#ld-dropdown{
     border-right: 1px solid #3d8af7;
