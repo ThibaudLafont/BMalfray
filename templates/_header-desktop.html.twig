@@ -1,32 +1,22 @@
-{#<section id="desktop-header">#}
-
-    {#<img id="home-pic" src="/img/picto/home.png" alt="Home pictogram">#}
-    {#<img id="linkedin-pic" src="/img/picto/linkedin.png" alt="LinkedIn pictogram">#}
-    {#<p>Bertrand Malfray</p>#}
-    {#<p>Game/Level Designer</p>#}
-{#</section>#}
-<div id="desktop-header">
-    <!-- Header top row -->
-    <div id="header-top-row" class="header-row">
-        <!-- Header top left column -->
-        <div id="left-top-info" class="header-column align-left">
-            <!-- Owner name -->
-            <span>Bertrand Malfray</span>
-            <span id="lg-designer"><a href="/">Accueil</a></span>
+<section id="desktop-header">
+    <!-- Top Row -->
+    <div id="header-top-row">
+        <!-- Links to Home and Contact -->
+        <div id="header-site-links">
+            <a href="/"><img src="/img/picto/home.png" alt="Home pictogram"></a>
+            <a href="/#contact-form-link">Contact</a>
         </div>
-
-        <!-- Header top right column -->
-        <div class="header-column align-right">
-            <!-- Owner profession & links to work resources -->
-            <span id="lg-designer">Game & Level Designer</span>
+        <!-- Link to LinkedIn -->
+        <div id="linkedin-block">
             <a href="https://www.linkedin.com/in/bertrand-malfray-305a71138/"
                title="B. Malfray LinkedIn profile"
-               target="_blank">LinkedIn
+               target="_blank">
+                <img src="/img/picto/linkedin.png" alt="LinkedIn Logo">
             </a>
         </div>
     </div>
 
-    <!-- Sub top-row with slashes -->
+    <!-- Decorate Row -->
     <div id="top-decoration" class="header-row">
         <div class="h-bg-right align-left"></div>
         <div class="h-slash-right align-left"></div>
@@ -34,38 +24,9 @@
         <div class="h-slash-left align-right"></div>
     </div>
 
-    <!-- Header bottom row -->
-    <div id="header-bottom-row" class="header-row">
-        <!-- Header bottom left column -->
-        <!-- Decoration -->
-        <div class="align-left decorate"></div>
-        <!-- BG -->
-        <div class="h-bg-right align-left"></div>
-        <!-- Slash block -->
-        <div class="h-slash-left align-left"></div>
-        <!-- Content -->
-        <div class="header-column align-left">
-            <!-- Link to Level Design projects -->
-            <a href="/projects/level-design">Projets Level Design</a>
-        </div>
-
-        <!-- Header bottom row right column -->
-        <!-- Decoration -->
-        <div class="align-right decorate"></div>
-        <!-- BG -->
-        <div class="h-bg-left align-right"></div>
-        <!-- Slash block -->
-        <div class="h-slash-right align-right"></div>
-        <!-- Content -->
-        <div class="header-column align-right">
-            <!-- Link to Game Design projects -->
-            <a href="/projects/game-design">Projets Game Design</a>
-        </div>
+    <!-- Text Row -->
+    <div id="text-row">
+        <p>Bertrand Malfray</p>
+        <p>Game/Level Designer</p>
     </div>
-
-    <div id="header-pic" class="header-row">
-        <a href="/">
-            <img src="/img/infos/bertrand-malfray-crop.png" alt="Photo de Bertrand Malfray">
-        </a>
-    </div>
-</div>
+</section>

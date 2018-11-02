@@ -29,7 +29,7 @@
 
     <!-- Header bottom row -->
     <div id="header-bottom-row" class="header-row">
-    <!-- Header bottom left column -->
+        <!-- Header bottom left column -->
         <!-- Decoration -->
         <div class="align-left decorate"></div>
         <!-- BG -->
@@ -42,7 +42,7 @@
             <a href="/projects/level-design">Projets Level Design</a>
         </div>
 
-    <!-- Header bottom row right column -->
+        <!-- Header bottom row right column -->
         <!-- Decoration -->
         <div class="align-right decorate"></div>
         <!-- BG -->
