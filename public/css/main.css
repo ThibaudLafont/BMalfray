@@ -245,7 +245,8 @@ ul#gd-dropdown{
     border-bottom: 1px solid #3d8af7;
     background-color: black;
 }
-#project-drop-down li a{
+#project-drop-down li a,
+#project-drop-down li.loading{
     display: block;
     padding: 12px;
 }
