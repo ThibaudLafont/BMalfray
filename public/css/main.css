@@ -195,16 +195,33 @@ section#homepage-content,
     width: 32px;
 }
 
-#text-row {
+#desktop-header #text-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#text-row p {
+#desktop-header #text-row p {
     font-size: 22px;
     text-align: center;
-    margin: 3rem 6rem;
+    margin: 48px 6rem 14px 6rem;
 }
+
+#project-links {
+    background-color: black;
+    margin-bottom: 80px;
+}
+#project-links div.project-link a {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3d8af7;
+    padding: 0 20px;
+}
+
+div.project-link a ul {
+    display: none;
+}
+
 
 /* Decoration */
 .h-slash-right, .h-slash-left {
@@ -251,6 +268,60 @@ section#homepage-content,
     border-top: 35px solid black;
     border-bottom: 0px solid black;
 }
+#header-bottom-decoration .h-bg-right {
+    height: 100%;
+    border-right: 28px solid transparent;
+    border-left: 80px solid black;
+    border-bottom: 36px solid black;
+    border-top: 0px solid black;
+    position: relative;
+    left: -80px;
+}
+#header-bottom-decoration .h-bg-left {
+    height: 100%;
+    border-left: 28px solid transparent;
+    border-right: 80px solid black;
+    border-bottom: 36px solid black;
+    border-top: 0px solid black;
+    position: relative;
+    right: -80px;
+}
+#header-bottom-decoration .h-slash-left,
+#header-bottom-decoration .header-column.align-left
+{
+    position: relative;
+    left: -108px;
+}
+#header-bottom-decoration .h-slash-right,
+#header-bottom-decoration .header-column.align-right
+{
+    position: relative;
+    right: -108px;
+}
+
+#header-bottom-decoration .align-left.decorate,
+#header-bottom-decoration .align-right.decorate{
+    width: 80px;
+    border-top: solid #3d8af7 1px;
+    position: relative;
+    top: -1px;
+    box-shadow:
+        inset 0 0 8px #3d8af7,
+        0px 0px 8px #3d8af7;
+}
+#fill-header-bottom-decoration {
+    text-align: center;
+    height: 34px;
+    border-bottom: solid #3d8af7 1px;
+}
+#fill-header-bottom-decoration a {
+    position: relative;
+    bottom: 70px;
+}
+#fill-header-bottom-decoration img {
+    width: 160px;
+}
+
 
 .mobile-header {
     display: none;
@@ -287,7 +358,7 @@ section#homepage-content,
 /*#header-top-row .header-column {*/
     /*width: 35%;*/
 /*}*/
-/*#header-bottom-row {*/
+/*#header-bottom-decoration {*/
     /*padding-top: 8px;*/
 /*}*/
 
