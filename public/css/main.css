@@ -208,9 +208,13 @@ section#homepage-content,
 
 #project-links {
     background-color: black;
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
+    position: relative;
+    top: -1px;
+    clear: both;
+    padding: 0 13%;
 }
-#project-links div.project-link a {
+#project-links div.project-link a span {
     height: 35px;
     display: flex;
     align-items: center;
@@ -218,8 +222,35 @@ section#homepage-content,
     padding: 0 20px;
 }
 
-div.project-link a ul {
+/* Drop down menu */
+#project-drop-down {
+    padding: 36px 13% 0 13%;
+    background-color: black;
+}
+#project-drop-down ul {
     display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+ul#ld-dropdown{
+    border-right: 1px solid #3d8af7;
+}
+ul#gd-dropdown{
+    border-left: 1px solid #3d8af7;
+}
+#project-drop-down li {
+    border-bottom: 1px solid #3d8af7;
+    background-color: black;
+}
+#project-drop-down li a{
+    display: block;
+    padding: 12px;
+}
+#gd-dropdown {
+    right: 13%;
 }
 
 
