@@ -20,23 +20,28 @@ function setUlMenuWidth($span, $ul)
 {
     var width = $($span).outerWidth();
     $($ul).css('width', width);
-
 }
-setUlMenuWidth('.project-link a[href="/projects/level-design"] span', '#ld-dropdown');
-setUlMenuWidth('.project-link a[href="/projects/game-design"] span', '#gd-dropdown');
 // Show/Hide
+function hoverMenu($a, $ul)
+{
+    $($a).hover(function(){
+        $($ul).show()
+    }, function(){
+        if($($ul).is(':hover')){
+            $($ul).hover(function () {}, function(){
+                $(this).hide()
+            })
+        } else {
+            $($ul).hide()
+        }
+    })
+}
     // LD menu
-$(' .project-link a[href="/projects/level-design"] ').hover(function(){
-    $('#ld-dropdown').show()
-}, function(){
-    $('#ld-dropdown').hide()
-})
-// GD menu
-$(' .project-link a[href="/projects/game-design"] ').hover(function(){
-    $('#gd-dropdown').show()
-}, function(){
-    $('#gd-dropdown').hide()
-})
+setUlMenuWidth('.project-link a[href="/projects/level-design"] span', '#ld-dropdown');
+hoverMenu(' .project-link a[href="/projects/level-design"] ', '#ld-dropdown');
+    // GD menu
+setUlMenuWidth('.project-link a[href="/projects/game-design"] span', '#gd-dropdown');
+hoverMenu(' .project-link a[href="/projects/game-design"] ', '#gd-dropdown');
 
 // Detect and put a timer on flash-messages for hide them
 $('.flash').delay(5000).fadeOut( 500 );

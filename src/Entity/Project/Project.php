@@ -189,6 +189,7 @@ class Project{
      *     type="object",
      *     message="La catégorie doit être un objet de type Category"
      * )
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 

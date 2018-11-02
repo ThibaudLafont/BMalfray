@@ -59,4 +59,15 @@ class ProjectController extends Controller
 
     }
 
+    /**
+     * @Route("/menu/projects", name="menu_projects")
+     */
+    public function getProjectsForMenus()
+    {
+        $projects = $this->getDoctrine()->getRepository(Project::class)
+            ->findForMenu(['cat_name' => 'Game Design']);
+
+        return $this->json($projects);
+    }
+
 }
