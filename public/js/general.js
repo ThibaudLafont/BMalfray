@@ -106,8 +106,10 @@ categoryFeedBack();
 $('.flash').delay(5000).fadeOut( 500 );
 
 // Analytics
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+if(window.location.pathname !== '/admin/analytics') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-gtag('config', 'UA-128623083-1');
+    gtag('config', 'UA-128623083-1');
+}

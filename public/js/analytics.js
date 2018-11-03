@@ -69,7 +69,6 @@ gapi.analytics.ready(function() {
             }
         }
     });
-    console.log(dataChart2);
 
 
     /**
