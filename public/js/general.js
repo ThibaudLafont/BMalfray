@@ -24,7 +24,9 @@ function setUlMenuWidth($span, $ul)
 function hoverMenu($a, $ul)
 {
     $($a).hover(function(){
-        $($ul).fadeIn()
+        if($($ul).css('display') === 'none') {
+            $($ul).fadeIn()
+        }
     }, function(){
         setTimeout(function(){
             if($($ul).is(':hover')){
@@ -32,9 +34,11 @@ function hoverMenu($a, $ul)
                     $(this).fadeOut()
                 })
             } else {
-                $($ul).fadeOut()
+                if(!$($a).is(':hover')){
+                    $($ul).fadeOut()
+                }
             }
-        }, 500)
+        }, 1000)
     })
 }
 // Inquire menu
@@ -74,6 +78,9 @@ $.ajax({
         // GD Projects
         var gd = response['gd'];
         inquireMenu(gd, '#gd-dropdown');
+    },
+    error: function(resultat, statut, erreur){
+        $('li.loading').text(erreur +', rechargez la page');
     }
 })
 
