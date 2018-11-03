@@ -84,5 +84,23 @@ $.ajax({
     }
 })
 
+// Feedback cat
+function categoryFeedBack(){
+    var url = window.location.pathname;
+    if(url === '/projects/level-design'){
+        setFeedBackBackground('.project-link a[href="/projects/level-design"] span');
+    } if (url === '/projects/game-design'){
+        setFeedBackBackground('.project-link a[href="/projects/game-design"] span');
+    }
+}
+function setFeedBackBackground($span){
+    $($span)
+        .css('background-image', 'url(\'/resource/menu-feedback.png\')')
+        .css('background-size', 'contain')
+        .css('background-position', 'center')
+        .css('background-repeat', 'no-repeat');
+}
+categoryFeedBack();
+
 // Detect and put a timer on flash-messages for hide them
 $('.flash').delay(5000).fadeOut( 500 );
