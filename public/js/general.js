@@ -38,7 +38,7 @@ function hoverMenu($a, $ul)
                     $($ul).fadeOut()
                 }
             }
-        }, 1000)
+        }, 700)
     })
 }
 // Inquire menu
