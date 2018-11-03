@@ -18,8 +18,7 @@ class MailSender
         $message = new \Swift_Message($senderName . ' cherche à te joindre');
         $message->setSender($senderMail, $senderName)
             ->setReplyTo($senderMail, $senderName)
-//            ->setTo(['contact@bertrandmalfray.fr' => 'Bertrand Malfray'])
-            ->setTo(['thibaudlafont@gmail.com' => 'Bertrand Malfray'])
+            ->setTo(['contact@bertrandmalfray.fr' => 'Bertrand Malfray'])
             ->setBody($this->buildBody($senderName, $senderMail, $content));
 
         $mailer = $this->getMailer();
