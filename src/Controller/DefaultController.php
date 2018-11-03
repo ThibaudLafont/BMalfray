@@ -2,8 +2,6 @@
 namespace App\Controller;
 
 use App\Entity\IndexInfo;
-use App\Entity\Project\Project;
-use App\Form\Type\ContactType;
 use App\Service\MailSender;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

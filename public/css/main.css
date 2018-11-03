@@ -719,3 +719,31 @@ img.float-left{
     margin: auto;
     display: block;
 }
+
+/* Analytics */
+#back-to-admin{
+    margin-bottom: 1rem;
+    display: block;
+}
+section#analytics,
+#back-to-admin{
+    background: url(/img/blue-background.png);
+    border: 1px solid #3d8af7;
+    box-shadow:
+            inset 0 0 6px #3d8af7,
+            0px 0px 6px #3d8af7;
+    border-radius: 1px;
+    padding: 1rem;
+}
+#embed-api-auth-container{
+    margin: 0 0 1rem 0;
+}
+#view-selector-container {
+    display: flex;
+    justify-content: space-between;
+}
+.chart-container {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fff;
+}

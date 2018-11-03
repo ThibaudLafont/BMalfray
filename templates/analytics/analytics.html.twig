@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Analytics{% endblock %}
+
+{% block body %}
+    <a href="/admin/dashboard" id="back-to-admin">Retour à l'espace admin</a>
+    <section id="analytics">
+        <div id="embed-api-auth-container"></div>
+        <div id="view-selector-container"></div>
+        <div id="chart-container" class="chart-container"></div>
+        <div id="chart2-container" class="chart-container"></div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/analytics.js"></script>
+{% endblock %}
