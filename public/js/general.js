@@ -43,7 +43,11 @@ function hoverMenu($a, $ul)
 }
 // Inquire menu
 function inquireMenu($data, $menuSelector) {
-    // For LD
+    // If no project
+    if($data.length === 0){
+        $($menuSelector + ' .loading').text('Aucun projet');
+    }
+    // If projects
     for (var p in $data){
         // Create link
         var a = document.createElement('a');
