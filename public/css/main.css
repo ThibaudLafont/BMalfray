@@ -617,11 +617,12 @@ h1#project-name {
     border-right:none;
 }
 #project-gallery a{
-    margin-right: 0.5rem;
+    margin: 0 0.5rem;
 }
 #project-gallery img,
 #project-gallery iframe{
     margin: auto;
+    max-width: 100%;
     height: 14.06vw;
 }
 .gallery-item-link,
