@@ -24,11 +24,17 @@ class Project
         $this->setSluggifier($sluggifier);
     }
 
+    public function prePersist(\App\Entity\Project\Project $project) {
+        $this->removeNullPHM($project);
+    }
+
     public function preFlush(\App\Entity\Project\Project $project) {
 
         $project->setSlugName(
             $this->getSluggifier()->sluggify($project->getName())
         );
+
+        $this->removeNullPHM($project);
 
     }
 
@@ -47,6 +53,14 @@ class Project
     public function setSluggifier(Sluggifier $sluggifier)
     {
         $this->sluggifier = $sluggifier;
+    }
+
+    private function removeNullPHM($project){
+        foreach ($project->getProjectHasMedias() as $hMedia){
+            if($hMedia->getMedia() === null){
+                $project->getProjectHasMedias()->removeElement($hMedia);
+            }
+        }
     }
 
 }
