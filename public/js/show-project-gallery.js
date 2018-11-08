@@ -9,6 +9,22 @@ $('.slick-container').slick({
     prevArrow: "<button type='button' class='slick-prev'><img src='/img/arrow-gallery.png'></img></button>"
 });
 
+function replaceDotsIfNeeded(){
+    if(window.outerWidth < 780) {
+        var dotsHeight = $('.slick-dots').outerHeight();
+        $('.slick-dots').css('bottom', '-' + (dotsHeight+1) + 'px')
+        $('#project-gallery .slick-container').css('margin-bottom', (dotsHeight-20) + 'px')
+    }
+}
+$(window).on({
+    load:function(){
+        replaceDotsIfNeeded()
+    },
+    resize:function(){
+        replaceDotsIfNeeded()
+    }
+});
+
 // Fancy Box config
 $('[data-fancybox="images"]').fancybox({
     protect: true,
