@@ -65,6 +65,7 @@ class Category{
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
      * )
+     * @Orm\OrderBy({"position" = "ASC"})
      *
      * @Assert\Valid
      * @Assert\Count(

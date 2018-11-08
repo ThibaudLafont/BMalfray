@@ -165,6 +165,7 @@ class Project{
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
      * )
+     * @Orm\OrderBy({"position" = "ASC"})
      *
      * @Assert\Valid
      * @Assert\Count(
@@ -215,6 +216,7 @@ class Project{
      *     cascade={"persist", "remove"},
      *     orphanRemoval=true
      * )
+     * @Orm\OrderBy({"position" = "ASC"})
      *
      * @Assert\Count(
      *      min = 1,
