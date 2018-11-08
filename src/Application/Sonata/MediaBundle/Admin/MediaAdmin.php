@@ -12,6 +12,11 @@ use Sonata\MediaBundle\Provider\Pool;
 class MediaAdmin extends BaseMediaAdmin
 {
 
+    protected $datagridValues = [
+        '_page' => 1,
+        '_sort_order' => 'ASC',
+        '_sort_by' => 'name',
+    ];
     /**
      * {@inheritdoc}
      */
