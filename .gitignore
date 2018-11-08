@@ -6,4 +6,4 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-/public/uploads/media
+# /public/uploads/media
