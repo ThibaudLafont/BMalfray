@@ -90,7 +90,7 @@ class ProjectAdmin extends AbstractAdmin
                 ])
                 ->add('projectHasMedias', CollectionType::class, [
                     'by_reference' => false,
-                    'label' => 'Gallerie'
+                    'label' => 'Galerie'
                 ], [
                     'edit' => 'inline',
                     'inline' => 'table',

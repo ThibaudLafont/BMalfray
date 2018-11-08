@@ -48,7 +48,7 @@ class CategoryAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('name', null, ['label' => 'Nom']);
     }
 
     protected function configureRoutes(RouteCollection $collection)
